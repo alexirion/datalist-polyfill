@@ -484,6 +484,8 @@ function isEdge()
 			return;
 		}
 
+		window.addEventListener("resize", function(){var rects = input.getClientRects(); datalistSelect.style.width = rects[0].width + 'px';})
+
 		var rects = input.getClientRects(),
 			// Measurements
 			inputStyles = window.getComputedStyle(input),
@@ -532,7 +534,7 @@ function isEdge()
 		datalistSelect.style.borderRadius = inputStyles.getPropertyValue(
 			'border-radius'
 		);
-		datalistSelect.style.minWidth = rects[0].width + 'px';
+		datalistSelect.style.width = rects[0].width + 'px';
 
 		if (touched) {
 			var messageElement = dcmnt.createElement('option');
